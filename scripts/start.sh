@@ -21,7 +21,7 @@ steamcmd=$steam_path/steamcmd.sh
 echo "Steam ... OK"
 
 echo " "
-echo "Installing/Updating Aska Dedicated Server files..."
+echo "Installing/Updating StarRupture Dedicated Server files..."
 echo " "
 
 $steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir "$server_files" +login anonymous +app_update 3809400 validate +quit
@@ -43,8 +43,8 @@ echo " "
 echo "Configuring StarRupture Dedicated Server ..."
 echo " "
 
-# update env cfg data
-#source /home/container/scripts/env2cfg.sh
+SERVER_PORT=${SERVER_PORT:-7777}
+echo "Using port: $SERVER_PORT"
 
 echo " "
 echo "Launching StarRupture Dedicated Server"
