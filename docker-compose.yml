@@ -1,0 +1,13 @@
+services:
+  starrupture:
+    container_name: starrupture
+    image: struppinet/starrupture-dedicated-server:latest
+    network_mode: bridge
+    environment:
+      - SERVER_PORT=7777
+    volumes:
+      - './savegame:/home/container/server_files/StarRupture/Saved/SaveGames:rw'
+      - './server:/home/container/server_files:rw'
+    ports:
+      - '7777:7777/udp'
+    restart: unless-stopped
